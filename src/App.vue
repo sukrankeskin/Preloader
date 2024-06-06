@@ -11,8 +11,8 @@
     </div>
     <div class="loading-screen">
       <div class="loader">
-        <div class="loader-1 bar"></div>
-        <div class="loader-2 bar"></div>
+        <img class="logo" src="./assets/logo.svg" alt="" />
+        <!-- Yeni yükleyici -->
       </div>
     </div>
   </div>
@@ -47,43 +47,29 @@ export default {
         stagger: {
           amount: 0.25,
         },
-        delay: 6,
+        delay: 1,
         duration: 1,
         ease: "power4.inOut",
       });
 
-      gsap.from(".loader-1", {
-        width: 0,
-        duration: 6,
-        ease: "power2.inOut",
-      });
-
-      gsap.from(".loader-2", {
-        width: 0,
-        delay: 1.9,
-        duration: 2,
-        ease: "power2.inOut",
-      });
-
-      gsap.to(".loader", {
-        background: "none",
-        delay: 6,
-        duration: 0.1,
-      });
-
-      gsap.to(".loader-1", {
-        rotate: 90,
-        y: -50,
-        duration: 0.5,
-        delay: 6,
-      });
-
-      gsap.to(".loader-2", { x: -75, y: 75, duration: 0.5 }, "<");
-
-      gsap.to(".loader", {
-        scale: 40,
+      gsap.from(".logo", {
+        opacity: 0,
         duration: 1,
-        delay: 7,
+        ease: "power2.inOut",
+      });
+
+      gsap.to(".logo", {
+        rotate: 360,
+        y: -10,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1,
+      });
+
+      gsap.to(".loader", {
+        scale: 600,
+        duration: 1,
+        delay: 2,
         ease: "power2.inOut",
       });
 
@@ -92,19 +78,19 @@ export default {
         y: 500,
         x: 2000,
         duration: 1,
-        delay: 7,
+        delay: 3,
         ease: "power2.inOut",
       });
 
       gsap.to(".loading-screen", {
         opacity: 0,
         duration: 0.5,
-        delay: 7.5,
+        delay: 2,
         ease: "power1.inOut",
       });
 
       gsap.to("h1", 1.5, {
-        delay: 7,
+        delay: 2,
         y: -80,
         ease: "power4.inOut",
         stagger: {
@@ -141,35 +127,6 @@ body {
   pointer-events: none;
 }
 
-.counter {
-  position: fixed;
-  left: 50px;
-  bottom: 50px;
-  display: flex;
-  height: 100px;
-  font-size: 100px;
-  line-height: 102px;
-  clip-path: polygon(0 0, 100% 0, 100% 100px, 0 100px);
-  font-weight: 400;
-}
-
-.counter-1,
-.counter-2,
-.counter-3 {
-  position: relative;
-  top: -15px;
-}
-
-.num1offset1 {
-  position: relative;
-  right: -25px;
-}
-
-.num1offset2 {
-  position: relative;
-  right: -10px;
-}
-
 .loader {
   position: absolute;
   top: 50%;
@@ -178,23 +135,8 @@ body {
   height: 50px;
   transform: translate(-50%, -50%);
   display: flex;
-  background: rgb(80, 80, 80);
-}
-
-.loader-1 {
-  position: relative;
-  background: #fff;
-  width: 200px;
-}
-
-.loader-2 {
-  position: relative;
-  width: 100px;
-  background: #fff;
-}
-
-.bar {
-  height: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
 .website-content {
