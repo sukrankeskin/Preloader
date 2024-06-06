@@ -11,7 +11,7 @@
     </div>
     <div class="loading-screen">
       <div class="loader">
-        <img class="logo" src="./assets/logo.svg" alt="" />
+        <img class="logo" src="./assets/icon.svg" alt="" />
         <!-- Yeni yükleyici -->
       </div>
     </div>
@@ -122,8 +122,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   pointer-events: none;
 }
 
@@ -144,6 +144,7 @@ body {
   width: 100%;
   height: 100%;
   top: 0;
+  background-color: #060a0f;
   left: 0;
   display: flex;
   justify-content: center;
@@ -162,6 +163,7 @@ body {
 
 h1 {
   font-size: 80px;
+  color: white;
 }
 
 .header .h1 h1 {
@@ -187,7 +189,7 @@ h1 {
   left: 0;
   width: 105%;
   height: 110%;
-  background: #fff;
+  background: #060a0f;
   top: 80px;
 }
 </style>
